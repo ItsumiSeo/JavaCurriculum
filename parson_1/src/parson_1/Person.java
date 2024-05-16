@@ -1,6 +1,9 @@
 package parson_1;
 
 class Person{
+	//クラスフィールドを定義
+	public static int count = 0;
+	
 	// インスタンスフィールドを定義
 	String name;
 	int age;
@@ -10,6 +13,7 @@ class Person{
 
 	// コンストラクタを定義しインスタンスフィールドに値をセット
 	Person(String name,int age,double height,double weight){
+		Person.count++;
 		this.name = name;
 		this.age = age;
 		this.height = height;
@@ -27,7 +31,11 @@ class Person{
 		public void print() {
 			System.out.println("名前は" + this.name + "です");
 			System.out.println("年は" + this.age + "です");
-			System.out.println("BMIは" + bmi() + "です");
+			System.out.println("BMIは" + String.format("%.1f",bmi()) + "です");
+		}
+				
+		public static void printCount() {
+			System.out.println("合計" + Person.count + "人です");
 		}
 	
 }

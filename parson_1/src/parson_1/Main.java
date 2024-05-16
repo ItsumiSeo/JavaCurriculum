@@ -10,6 +10,10 @@ class Main {
 	    System.out.println(person1.age);
 	    System.out.println(person1.height);
 	    
+	    person1.print();
+	    
+	    Person.printCount();
+	    
 	  }
 	  
 }
